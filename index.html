@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
+    <title>AOS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Stylish', sans-serif;
+        }
+        .backgrounds {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            background: linear-gradient(#d096f1, #919af4);
+        }
+        .square {
+            width: 500px;
+            height: 720px;
+            background-color: #8349c0;
+            transform: rotate(70deg);
+            border-radius: 60px;
+            position: absolute;
+        }
+        .background_square {
+            top: -150px;
+            right: 30px;
+        }
+        .square_one {
+            width: 20px;
+            height: 20px;
+            border: 6px solid #ff96e6;
+            position: absolute;
+            bottom: 50px;
+            left: 200px;
+            transform: rotate(45deg);
+            animation: 30s jump30_250 linear infinite;
+        }
+        .square_two {
+            width: 10px;
+            height: 10px;
+            background-color: #00e6de;
+            position: absolute;
+            top: 50px;
+            right: 30px;
+            transform: rotate(60deg);
+            animation: 2s flicker linear infinite;
+        }
+        .square_three {
+            width: 15px;
+            height: 15px;
+            background-color: #00e6de;
+            position: absolute;
+            top: 70px;
+            left: 500px;
+            transform: rotate(30deg);
+            animation: 8s jump12_100 linear infinite;
+        }
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .circle_one {
+            border: 6px solid #fcee88;
+            bottom: 20px;
+            left: 500px;
+            animation: 12s jump12_100 linear infinite;
+        }
+        .circle_two {
+            border: 6px solid #37dbfc;
+            bottom: 30px;
+            right: 100px;
+            animation: 20s jump12_100 linear infinite;
+        }
+        .circle_baby {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .circle_baby_one {
+            top: 300px;
+            left: 180px;
+            animation: 2s flicker linear infinite;
+        }
+        .circle_baby_two {
+            bottom: 200px;
+            right: 50px;
+            animation: 4s flicker linear infinite;
+        }
+        .circle_double {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .circle_double_one {
+            bottom: 200px;
+            left: 30px;
+            animation: 4s flicker linear infinite;
+        }
+        .circle_double_two {
+            top: 200px;
+            right: 100px;
+            animation: 12s jump12_100 linear infinite;
+        }
+        .background_circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #c08cea;
+            position: absolute;
+            top: 60px;
+            left: 190px;
+        }
+        .item {
+            width: 800px;
+            height: 66vh;
+            margin: 17vh auto;
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .item_square {
+            border-radius: 60px;
+            left: 510px;
+            bottom: 33px;
+            background: linear-gradient(to right bottom, #cb74e3, #8349c0);
+        }
+        @keyframes jump12_100 {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-100px);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes jump30_250 {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-250px);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes flicker {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1200 })</script>
+
+    <div class="backgrounds">
+        <div class="square background_square"></div>
+        <div class="square_one"></div>
+        <div class="square_two"></div>
+        <div class="square_three"></div>
+        <div class="circle circle_one"></div>
+        <div class="circle circle_two"></div>
+        <div class="circle_baby circle_baby_one"></div>
+        <div class="circle_baby circle_baby_two"></div>
+        <div class="circle_double circle_double_one">
+            <div class="circle_baby"></div>
+        </div>
+        <div class="circle_double circle_double_two">
+            <div class="circle_baby"></div>
+        </div>
+        <div class="background_circle"></div>
+    </div>
+    <!-- Slides -->
+    <div class="item" data-aos="fade-left">
+        <div class="square item_square"></div>
+        <p>Estefany Aguilar R.</p>
+    </div>
+    <div class="item" data-aos="fade-right">
+        <div class="square item_square"></div>
+    </div>
+    <div class="item" data-aos="fade-left">
+        <div class="square item_square"></div>
+    </div>
+    <div class="item" data-aos="fade-right">
+        <div class="square item_square"></div>
+    </div>
+    <div class="item" data-aos="fade-left">
+        <div class="square item_square"></div>
+    </div>
+    <div class="item" data-aos="fade-right">
+        <div class="square item_square"></div>
+    </div>
+</body>
+</html>
